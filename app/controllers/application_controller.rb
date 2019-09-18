@@ -16,3 +16,5 @@ class ApplicationController < ActionController::Base
     @count_followers = user.followers.count
   end
 end
+
+#アプリケーションコントローラーは、全てのコントローラーにより継承されているだから、ここに書いたものは別のところで引き継ぐことができる。
