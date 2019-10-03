@@ -38,6 +38,15 @@ class UsersController < ApplicationController
      @followers = @user.followers.page(params[:page])
      counts(@user)
   end
+  
+  def likes
+     @user = User.find(params[:id])
+     # @favorite_microposts
+     @favorite_microposts = @user.favorited_microposts.page(params[:page])
+     counts(@user)
+  end
+  
+#ここで返ってくるのは、micropostのインスタンスやから、@favoritesという変数よりも、分かりやすい@favorites_micropostにした方がいい。
    private 
    
    def user_params
