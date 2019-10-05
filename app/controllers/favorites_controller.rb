@@ -14,6 +14,6 @@ class FavoritesController < ApplicationController
     micropost = Micropost.find(params[:micropost_id])
     user.dislike(micropost)
     flash.now[:danger] = 'お気に入り登録を削除しました。'
-    redirect_back(fallback_location: root_)
+    redirect_back(fallback_location: root_url)
   end
 end
